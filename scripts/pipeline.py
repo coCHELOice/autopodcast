@@ -20,7 +20,7 @@ audio = root/f"audio/{ep['id']}.mp3"; audio.parent.mkdir(exist_ok=True)
 r = requests.post(
     f"https://api.elevenlabs.io/v1/text-to-speech/{os.getenv('VOICE_ID')}/stream",
     headers={"xi-api-key": os.getenv("EL_API_KEY")},
-    json={"text": guion, "model_id": "eleven_multilingual_v2"}
+    json={"text": guion, "model_id": "eleven_turbo_v2"}
 )
 if r.status_code != 200:
     print("ElevenLabs error:", r.status_code, r.text)

@@ -1,4 +1,4 @@
 - id: t1e02
   titulo: "IA y café"
-  prompt: "Escribe un guion de 300 palabras, tono cinico, sobre como la IA funciona a base de café."
+  prompt: "Escribe un guion de 250 palabras, tono cinico, sobre como la IA funciona a base de café."
   estado: pendiente
