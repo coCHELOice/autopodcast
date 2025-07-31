@@ -9,9 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          pip install -q openai elevenlabs ffmpeg-python feedgen pyyaml
-          sudo apt-get -qq update
-          sudo apt-get install -y ffmpeg
+          pip install -q openai==0.28 elevenlabs ffmpeg-python feedgen pyyaml
+    sudo apt-get -qq update
+    sudo apt-get install -y ffmpeg
       - run: python scripts/pipeline.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
