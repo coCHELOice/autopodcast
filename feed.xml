@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Autopodcast de Marcelo</title>
+    <link>https://cocheloice.github.io/autopodcast</link>
+    <description>Podcast generado automáticamente con IA</description>
+    <language>es</language>
+
+    <!-- Episodio de prueba -->
+    <item>
+      <title>Episodio de prueba</title>
+      <description>Sólo para validar el RSS.</description>
+      <enclosure url="https://cocheloice.github.io/autopodcast/audio/blank.mp3"
+                 length="1000" type="audio/mpeg"/>
+      <guid>test-000</guid>
+      <pubDate>Wed, 31 Jul 2024 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
