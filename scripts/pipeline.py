@@ -35,6 +35,9 @@ tmp.replace(audio)
 
 # 4· Actualizar RSS
 fg, rss = FeedGenerator(), root/'feed.xml'
+fg.title("Autopodcast de Avenida")
+fg.link(href=os.getenv('FEED_URL').rsplit('/',1)[0], rel='self')
+fg.description("Podcast generado automáticamente con IA")
 # if rss.exists():
 #   fg.parse_feed(rss.read_text())
 base = os.getenv('FEED_URL').rsplit('/',1)[0]
