@@ -1,0 +1,6 @@
+title: Autopodcast de Marcelo
+description: Podcast generado automáticamente con IA
+url: https://cocheloice.github.io/autopodcast
+baseurl: ""
+plugins:
+  - jekyll-feed
