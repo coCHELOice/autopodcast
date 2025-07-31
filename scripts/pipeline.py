@@ -34,19 +34,35 @@ subprocess.run(["ffmpeg","-y","-i", audio,
 tmp.replace(audio)
 
 # 4· Actualizar RSS
-fg, rss = FeedGenerator(), root/'feed.xml'
+fg, rss = FeedGenerator(), root / 'feed.xml'
+
+# ── datos de canal
+site_url  = os.getenv('FEED_URL').rsplit('/', 1)[0]
 fg.title("Autopodcast de Avenida")
-fg.link(href=os.getenv('FEED_URL').rsplit('/',1)[0], rel='self')
+fg.link(href=site_url, rel='alternate')
+fg.link(href=os.getenv('FEED_URL'), rel='self')
+fg.language('es')
 fg.description("Podcast generado automáticamente con IA")
-# if rss.exists():
-#   fg.parse_feed(rss.read_text())
-base = os.getenv('FEED_URL').rsplit('/',1)[0]
+
+#  extensiones iTunes requeridas por YouTube
+fg.load_extension('itunes')
+fg.itunes_author("Marcelo González")
+fg.itunes_owner(name="Marcelo González", email="tucorreo@ejemplo.com")
+fg.itunes_category("Society & Culture", "Philosophy")
+cover = root / 'cover.jpg'
+if cover.exists():
+    fg.itunes_image(f"{site_url}/cover.jpg")
+
+# ── crear item
 it = fg.add_entry()
 it.id(str(uuid.uuid4()))
 it.title(ep['titulo'])
 it.description(guion[:160])
-it.enclosure(f"{base}/audio/{audio.name}", str(audio.stat().st_size), 'audio/mpeg')
+audio_url = f"{site_url}/audio/{audio.name}"
+it.enclosure(audio_url, str(audio.stat().st_size), 'audio/mpeg')
 it.pubDate(datetime.datetime.now(datetime.timezone.utc))
+
+# guardar feed
 fg.rss_file(rss)
 
 # 5· Marcar publicado
