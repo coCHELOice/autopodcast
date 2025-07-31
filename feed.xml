@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0"> <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+
   <channel>
     <title>Autopodcast de Marcelo</title>
     <link>https://cocheloice.github.io/autopodcast</link>
     <description>Podcast generado automáticamente con IA</description>
+    <itunes:author>Marcelo González</itunes:author>
+<itunes:category text="Society & Culture"/>
+<itunes:image href="https://cocheloice.github.io/autopodcast/cover.jpg"/>
     <language>es</language>
 
     <!-- Episodio de prueba -->
