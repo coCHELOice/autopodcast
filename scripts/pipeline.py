@@ -34,7 +34,7 @@ tmp.replace(audio)
 
 # 4· Actualizar RSS
 fg, rss = FeedGenerator(), root/'feed.xml'
-nano scripts/pipeline.pyif rss.exists():
+if rss.exists():
     fg.parse_feed(rss.read_text())
 base = os.getenv('FEED_URL').rsplit('/',1)[0]
 it = fg.add_entry()
