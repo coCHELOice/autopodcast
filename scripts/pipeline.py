@@ -65,6 +65,14 @@ it.pubDate(datetime.datetime.now(datetime.timezone.utc))
 
 # guardar feed
 fg.rss_file(rss)
+# ── subir feed y audio ──────────────────────────────
+subprocess.run(["git", "config", "--global", "user.email", "github-actions@github.com"], check=True)
+subprocess.run(["git", "config", "--global", "user.name",  "GitHub Actions"], check=True)
+subprocess.run(["git", "add", str(rss), f"audio/{audio.name}", "prompts/episodios.yml"], check=True)
+subprocess.run(["git", "commit", "-m", f"publish {ep['id']}"], check=True)
+# el token GITHUB_TOKEN está disponible por defecto en los runners
+subprocess.run(["git", "push", "origin", "main"], check=True)
+
 
 # 5· Marcar publicado
 ep['estado'] = 'publicado'
