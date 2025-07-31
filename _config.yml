@@ -1,3 +1,10 @@
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+  collections: [posts]
+
 title: Autopodcast de Marcelo
 description: Podcast generado automáticamente con IA
 url: https://cocheloice.github.io/autopodcast
