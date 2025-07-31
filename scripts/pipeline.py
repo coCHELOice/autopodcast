@@ -43,7 +43,7 @@ it.id(str(uuid.uuid4()))
 it.title(ep['titulo'])
 it.description(guion[:160])
 it.enclosure(f"{base}/audio/{audio.name}", str(audio.stat().st_size), 'audio/mpeg')
-it.pubDate(datetime.now(timezone.utc))
+it.pubDate(datetime.datetime.now(datetime.timezone.utc))
 fg.rss_file(rss)
 
 # 5· Marcar publicado
