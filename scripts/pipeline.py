@@ -45,7 +45,8 @@ fg.language('es')
 fg.description("Podcast generado automáticamente con IA")
 
 #  extensiones iTunes requeridas por YouTube
-fg.load_extension('itunes')
+#  fg.load_extension('itunes')
+fg._add_namespace('itunes', 'http://www.itunes.com/dtds/podcast-1.0.dtd')
 fg.itunes_author("Marcelo González")
 fg.itunes_owner(name="Marcelo González", email="tucorreo@ejemplo.com")
 fg.itunes_category("Society & Culture", "Philosophy")
