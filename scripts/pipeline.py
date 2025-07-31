@@ -21,6 +21,9 @@ r = requests.post(
     headers={"xi-api-key": os.getenv("EL_API_KEY")},
     json={"text": guion, "model_id": "eleven_multilingual_v2"}
 )
+if r.status_code != 200:
+    print("ElevenLabs error:", r.status_code, r.text)
+    raise SystemExit("TTS failed")
 audio.write_bytes(r.content)
 
 # 3· Normalizar LUFS
@@ -31,7 +34,7 @@ tmp.replace(audio)
 
 # 4· Actualizar RSS
 fg, rss = FeedGenerator(), root/'feed.xml'
-if rss.exists():
+nano scripts/pipeline.pyif rss.exists():
     fg.parse_feed(rss.read_text())
 base = os.getenv('FEED_URL').rsplit('/',1)[0]
 it = fg.add_entry()
