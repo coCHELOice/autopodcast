@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: pip install -q openai==0.28 elevenlabs ffmpeg-python feedgen[extensions]==0.9.0 pyyaml
+      - run: pip install -q openai==0.28 elevenlabs ffmpeg-python feedgen==1.2.0 pyyaml
 
       - run: sudo apt-get -qq update
 
