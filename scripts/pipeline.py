@@ -34,8 +34,8 @@ tmp.replace(audio)
 
 # 4· Actualizar RSS
 fg, rss = FeedGenerator(), root/'feed.xml'
-if rss.exists():
-    fg.parse_feed(rss.read_text())
+# if rss.exists():
+#   fg.parse_feed(rss.read_text())
 base = os.getenv('FEED_URL').rsplit('/',1)[0]
 it = fg.add_entry()
 it.id(str(uuid.uuid4()))
