@@ -46,13 +46,13 @@ fg.description("Podcast generado automáticamente con IA")
 
 #  extensiones iTunes requeridas por YouTube
 #  fg.load_extension('itunes')
-fg._add_namespace('itunes', 'http://www.itunes.com/dtds/podcast-1.0.dtd')
-fg.itunes_author("Marcelo González")
-fg.itunes_owner(name="Marcelo González", email="tucorreo@ejemplo.com")
-fg.itunes_category("Society & Culture", "Philosophy")
+#fg._add_namespace('itunes', 'http://www.itunes.com/dtds/podcast-1.0.dtd')
+#fg.itunes_author("Marcelo González")
+#fg.itunes_owner(name="Marcelo González", email="tucorreo@ejemplo.com")
+#fg.itunes_category("Society & Culture", "Philosophy")
 cover = root / 'cover.jpg'
-if cover.exists():
-    fg.itunes_image(f"{site_url}/cover.jpg")
+#if cover.exists():
+    # fg.itunes_image(f"{site_url}/cover.jpg")
 
 # ── crear item
 it = fg.add_entry()
