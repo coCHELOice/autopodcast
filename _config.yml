@@ -1,6 +1,3 @@
-title: "Autopodcast de Marcelo"
-description: "Podcast generado automáticamente con IA"
-url: "https://cocheloice.github.io/autopodcast"
 plugins:
   - jekyll-feed
   - jekyll-podcast
@@ -9,11 +6,11 @@ feed:
   path: feed.xml
 
 podcast:
-  title: "Autopodcast de Marcelo"
-  description: "Podcast generado automáticamente con IA"
-  url: "https://cocheloice.github.io/autopodcast"
-  feed_url: "https://cocheloice.github.io/autopodcast/feed.xml"
-  cover_image: "/cover.jpg"
-  author: "Marcelo González"
+  title:       "Autopodcast de Marcelo"
+  subtitle:    "Podcast generado automáticamente con IA"
+  link:        "https://cocheloice.github.io/autopodcast"
+  feed_url:    "https://cocheloice.github.io/autopodcast/feed.xml"
+  cover:       "/cover.jpg"
+  author:      "Marcelo González"
   categories:
     - "Society & Culture"
